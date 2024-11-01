@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button id="login-btn">Login</button>
+    </div>
+
+    <div id="pos-container" style="display: none;">
+        <h1>POS System</h1>
+        <nav>
+            <button data-tab="sales">Sales</button>
+            <button data-tab="inventory">Inventory</button>
+            <button data-tab="employees">Employees</button>
+            <button data-tab="customers">Customers</button>
+            <button data-tab="reports">Reports</button>
+        </nav>
+
+        <div id="sales" class="tab-content">
+            <h2>Sales</h2>
+            <div id="product-list"></div>
+            <div id="cart">
+                <h3>Cart</h3>
+                <ul id="cart-items"></ul>
+                <p>Total: $<span id="cart-total">0.00</span></p>
+                <button id="checkout-btn">Checkout</button>
+            </div>
+        </div>
+
+        <div id="inventory" class="tab-content">
+            <h2>Inventory Management</h2>
+            <form id="add-product-form">
+                <input type="text" id="product-name" placeholder="Product Name" required>
+                <input type="number" id="product-price" placeholder="Price" step="0.01" required>
+                <input type="number" id="product-stock" placeholder="Stock" required>
+                <button type="submit">Add Product</button>
+            </form>
+            <ul id="inventory-list"></ul>
+        </div>
+
+        <div id="employees" class="tab-content">
+            <h2>Employee Management</h2>
+            <form id="add-employee-form">
+                <input type="text" id="employee-name" placeholder="Employee Name" required>
+                <input type="text" id="employee-role" placeholder="Role" required>
+                <button type="submit">Add Employee</button>
+            </form>
+            <ul id="employee-list"></ul>
+        </div>
+
+        <div id="customers" class="tab-content">
+            <h2>Customer Management</h2>
+            <form id="add-customer-form">
+                <input type="text" id="customer-name" placeholder="Customer Name" required>
+                <input type="number" id="customer-loyalty" placeholder="Loyalty Points" required>
+                <button type="submit">Add Customer</button>
+            </form>
+            <ul id="customer-list"></ul>
+        </div>
+
+        <div id="reports" class="tab-content">
+            <h2>Reports</h2>
+            <button id="generate-sales-report">Generate Sales Report</button>
+            <button id="generate-inventory-report">Generate Inventory Report</button>
+            <div id="report-output"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
